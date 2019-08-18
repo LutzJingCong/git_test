@@ -687,6 +687,7 @@ class TCPServer(object):
         try:
             self.socket = socket.socket(socket.AF_INET if self.ipv4 is True else socket.AF_INET6, socket.SOCK_STREAM)
             self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+            print((self.hostname, self.port))
             self.socket.bind((self.hostname, self.port))
             self.socket.listen(self.backlog)
             logger.info('Started server on port %d' % self.port)

@@ -1,8 +1,8 @@
 import socket
 
 s = socket.socket()
-s.bind(('127.0.0.1', '8899'))
-s.listen()
+s.bind(('127.0.0.1', 8899))
+s.listen(5)
 
 while True:
     print('连接成功')
